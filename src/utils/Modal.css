@@ -1,0 +1,8 @@
+.modal-wrapper {
+  transform: translateY(-100%);
+  transition: transform 0.5s ease-out;
+}
+
+.modal-wrapper.modal-open {
+  transform: translateY(0);
+}

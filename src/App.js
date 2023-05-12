@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import { PaginaInicio } from "./pages/PaginaInicio";
+import { PaginaDetalle } from "./pages/PaginaDetalle";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Modal } from "./utils/Modal.js";
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ minHeight: "100vh" }} className="bg-gray-800">
+      <Modal />
+      <Router>
+        <Routes>
+          <Route index exact path="/" element={<PaginaInicio />} />
+          <Route exact path="/detalles/:id" element={<PaginaDetalle />} />
+        </Routes>
+      </Router>
     </div>
   );
-}
+};
 
 export default App;
